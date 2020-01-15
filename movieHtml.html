@@ -1,49 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="images/popcorntime.ico"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Movies</title>
+    <title>Moviefone</title>
     <link rel="stylesheet" type="text/css" href="movieCss.css"/>
 </head>
-    <header>
+    <header class="headerStyle">
         <h1>Movie Database</h1>
     </header>
+    
+    <div class="mInput">
+        <h4>Add a Movie</h4>
+        Title: <input type="text" id="Title">
+        Genre: <input type="text" id="Genre">
+        Director: <input type="text" id="Director">
+        ImageURL:  <input type="text" id="ImageURL">
+        <button class="sub" id="add-movie">Submit</button>
+    </div>
+
 <body>
+    <div id="headerTitle">    
+        <table class="GeneratedTable">
+            <thead>
+            <tr>
+                <th>
+                    <strong>Title:</strong>
+                </th>
+                <th>
+                    <strong>Genre:</strong>
+                </th>
+                <th>
+                    <strong>Director:</strong>
+                </th>
+                <th>
+                    <strong>Poster:</strong>
+                </th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
     <ul id="movies"></ul>
-
     <template id="movie-template">
-        <li data-id="{{MovieId}}"> 
+        <h5 data-id="{{MovieId}}"> 
+            <table class="GeneratedTable">
+                <thead>
+                  <tr>
+                    <td>
+                            <span class="noedit title">{{Title}}</span>
+                            <input class="edit title"/>
+                    </td>
+                    <td>
+                        <span class="noedit genre">{{Genre}}</span>
+                        <input class="edit genre"/>
+                    </td>
+                    <td>
+                        <span class="noedit director">{{Director}}</span>
+                        <input class="edit director"/>
+                    </td>
+                    <td>
+                        <img src="{{ImageURL}}" alt="{{ImageURL}}" width="200" height="200">
+                        <button class="deleteImage noedit">Delete</button>
+                    </td>
+                  </tr>
+                </thead>
+            </table>
             <p>
-                <strong>Title:</strong>
-                <span class="noedit title">{{Title}}</span>
-                <input class="edit title"/>
+
             </p> 
             <p>
-                <strong>Genre:</strong> {{Genre}}
-                <span class="noedit genre">{{Genre}}</span>
-                <input class="edit genre"/>
+
             </p> 
             <p>
-                <strong>Director:</strong> {{Director}}
-                <span class="noedit director">{{Director}}</span>
-                <input class="edit director"/>
+
             </p>
-            <button data-id='{{MovieId}}' class='remove'>Delete</button>
-            <button class="editMovie noedit">Edit</button>
-            <button class="saveEdit edit">Save</button>
-            <button class="cancelEdit edit">Cancel</button>
+            <div>
+            <button id="but" data-id='{{MovieId}}' class='remove'>Delete</button>
+            <button id="but" class="editMovie noedit">Edit</button>
+            <button id="but" class="saveEdit edit">Save</button>
+            <button id="but" class="cancelEdit edit">Cancel</button>
+            </div>
             
-        </li>
+        </h5>
     </template>
-
-    <h4>Add a Movie</h4>
-    <p>Title: <input type="text" id="Title"></p>
-    <p>Genre: <input type="text" id="Genre"></p>
-    <p>Director: <input type="text" id="Director"></p>
-    <button id="add-movie">Submit</button>
-
     <script class id = "url" src="https://localhost:44352/api/Movie"></script>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="jsMovieReDo.js"></script>

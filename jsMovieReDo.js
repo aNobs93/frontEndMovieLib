@@ -1,6 +1,7 @@
 var $Title = $('#Title');
 var $Genre = $('#Genre');
 var $Director = $('#Director');
+var $ImageURL = $('#ImageURL');
 var $moviesList = $('#movies');
 var movieTemplate = $('#movie-template').html();
 // "<li>" +
@@ -31,7 +32,8 @@ $.ajax({
         var movie = {
             Title: $Title.val(),
             Genre: $Genre.val(),
-            Director: $Director.val()
+            Director: $Director.val(),
+            ImageURL: $ImageURL.val()
         };
         $.ajax({
             type: 'POST',
@@ -46,14 +48,15 @@ $.ajax({
         })
     });
     $moviesList.delegate('.remove', 'click', function(){
-        var $li = $(this).closest('li');
+        var $h5 = $(this).closest('h5');
         var self = this;
 
         $.ajax({
             type: 'DELETE',
             url: 'https://localhost:44352/Api/Movie/' + $(this).attr('data-id'),
             success: function(){
-                $li.fadeOut(300, function(){
+                alert('success')
+                $h5.fadeOut(300, function(){
                     $(this).remove();
                 });
             }
@@ -61,41 +64,47 @@ $.ajax({
 
     });
     $moviesList.delegate('.editMovie', 'click', function(){
-        var $li = $(this).closest('li');
-        $li.find('input.title').val( $li.find('span.title').html());
-        $li.find('input.genre').val( $li.find('span.genre').html());
-        $li.find('input.director').val( $li.find('span.director').html());
-        $li.addClass('edit');
+        var $h5 = $(this).closest('h5');
+        $h5.find('input.title').val( $h5.find('span.title').html());
+        $h5.find('input.genre').val( $h5.find('span.genre').html());
+        $h5.find('input.director').val( $h5.find('span.director').html());
+        $h5.addClass('edit');
 
     });
     $moviesList.delegate('.cancelEdit', 'click', function(){
-        $(this).closest('li').removeClass('edit');
+        $(this).closest('h5').removeClass('edit');
 
     });
     $moviesList.delegate('.saveEdit', 'click', function(){
-        var $li = $(this).closest('li');
+        var $h5 = $(this).closest('h5');
         var movie = {
-            Title: $li.find('input.title').val(),
-            Genre: $li.find('input.genre').val(),
-            Director: $li.find('input.director').val()
+            Title: $h5.find('input.title').val(),
+            Genre: $h5.find('input.genre').val(),
+            Director: $h5.find('input.director').val()
         };
-        
-        // var url = "https://localhost:44352/api/Movie/" + $li.attr('data-id')
-        // console.log(url);
 
         $.ajax({
             type: 'PUT',
-            url: 'https://localhost:44352/Api/Movie/' + $li.attr('data-Id'),
+            url: 'https://localhost:44352/Api/Movie/' + $h5.attr('data-Id'),
             data: movie,
             success: function(newMovie){
-                $li.find('span.title').html(movie.Title);
-                $li.find('span.genre').html(movie.Genre);
-                $li.find('span.director').html(movie.Director);
-                $li.removeClass('edit');
+                $h5.find('span.title').html(movie.Title);
+                $h5.find('span.genre').html(movie.Genre);
+                $h5.find('span.director').html(movie.Director);
+                $h5.removeClass('edit');
             },
             error: function(){
                 alert('error updating movie');
             }
         })
     })
+
+    $moviesList.delegate('.deleteImage', 'click', function(){
+        var thisImage = $(this).closest('img');
+        thisImage.remove();
+    });
+     var loadFile = function(event) {
+     var image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    };
 });
