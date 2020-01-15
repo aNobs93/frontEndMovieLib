@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Movies</title>
+    <link rel="stylesheet" type="text/css" href="movieCss.css"/>
+</head>
+    <header>
+        <h1>Movie Database</h1>
+    </header>
+<body>
+    <ul id="movies"></ul>
+
+    <template id="movie-template">
+        <li data-id="{{MovieId}}"> 
+            <p>
+                <strong>Title:</strong>
+                <span class="noedit title">{{Title}}</span>
+                <input class="edit title"/>
+            </p> 
+            <p>
+                <strong>Genre:</strong> {{Genre}}
+                <span class="noedit genre">{{Genre}}</span>
+                <input class="edit genre"/>
+            </p> 
+            <p>
+                <strong>Director:</strong> {{Director}}
+                <span class="noedit director">{{Director}}</span>
+                <input class="edit director"/>
+            </p>
+            <button data-id='{{MovieId}}' class='remove'>Delete</button>
+            <button class="editMovie noedit">Edit</button>
+            <button class="saveEdit edit">Save</button>
+            <button class="cancelEdit edit">Cancel</button>
+            
+        </li>
+    </template>
+
+    <h4>Add a Movie</h4>
+    <p>Title: <input type="text" id="Title"></p>
+    <p>Genre: <input type="text" id="Genre"></p>
+    <p>Director: <input type="text" id="Director"></p>
+    <button id="add-movie">Submit</button>
+
+    <script class id = "url" src="https://localhost:44352/api/Movie"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jsMovieReDo.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+</body>
+</html>
