@@ -4,12 +4,6 @@ var $Director = $('#Director');
 var $ImageURL = $('#ImageURL');
 var $moviesList = $('#movies');
 var movieTemplate = $('#movie-template').html();
-// "<li>" +
-// "<p><strong>Title:</strong> {{Title}}</p>" + 
-// "<p><strong>Genre:</strong> {{Genre}}</p>" + 
-// "<p><strong>Director:</strong> {{Director}}</p>" +
-// "<button data-id='{{MovieId}}' class='remove'>Delete</button>" +
-// "</li>";
 $(function(){
 
     function addMovie(movie){
@@ -41,6 +35,14 @@ $.ajax({
             data: movie,
             success: function(newMovie){
                 addMovie(movie);
+
+            },
+            success: function(){
+                $('#Title').val('');
+                $('#Genre').val('');
+                $('#Director').val('');
+                $('#ImageURL').val('');
+                $('ul').empty()
             },
             success: function(){
                 $('#Title').val('');
