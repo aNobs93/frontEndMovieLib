@@ -14,7 +14,7 @@ table.GeneratedTable {
 
 table.GeneratedTable td, table.GeneratedTable th {
   border-width: 2px;
-  background: rgba(0, 151, 19, 0.1);
+  background: rgba(180, 185, 181, 0.1);
   /* border-color: #4242bd; */
   border-style: solid;
   padding: 20px;
@@ -23,7 +23,7 @@ table.GeneratedTable td, table.GeneratedTable th {
 }
 
 table.GeneratedTable thead {
-    background: rgba(0, 151, 19, 0.1);
+    background: rgba(194, 199, 195, 0.1);
   /* background-color: #408080; */
   /* opacity: 0.5; */
 
@@ -32,7 +32,13 @@ table.GeneratedTable thead {
 body{
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-image: url("images/oldSchool.jpg") ;
+    background-image: url("https://ae01.alicdn.com/kf/HTB1OzvOXsrrK1RjSspaq6AREXXaN/MEHOFOTO-Birthday-Wedding-theme-hollywood-photo-backdrop-Red-carpet-for-VIP-event-party-banner-superstar-background.jpg_960x960.jpg");
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 a{
@@ -61,7 +67,7 @@ ul h5{
 
 #but{
     text-align: center;    
-    background-color: #4CAF50;
+    background-color: rgb(216, 231, 9);
     border: none;
     color: white;
     padding: 10px 28px;
@@ -91,18 +97,52 @@ ul li.edit .noedit{
     display: none;
 }
 
-.mInput{
+/* .mInput{
     align-self: center;
     text-align: center;
     padding: 1px;
     background-color: #408080;
     opacity: 1.0;
     
-}
+} */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: rgb(33, 34, 36);
+    color: rgb(241, 238, 22);
+    cursor: pointer;
+    padding: 18px;
+    width: 30%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: rgb(51, 104, 202)));
+
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-image: url(https://d.newsweek.com/en/full/1038180/19787239-10154930893573074-1345130715200211573-o.jpg);
+    background-size: contain;
+    width: 30%;
+    color: gold;
+    font-weight: bolder;
+    font-size: large;
+   
+  }
 
 .headerStyle{
     text-align: center;
     padding: 1%
+
 }
 
 table {
@@ -132,3 +172,23 @@ td {
 .sub:hover{
     opacity: 2;
 }
+
+.noedit{
+    color: rgb(15, 15, 15);
+    font-family: monospace;
+}
+
+.header-img {
+    width: 100%;
+    height: 400px;
+    background: url(AT2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+
+  .foot{
+      text-align: center;
+  }
+

@@ -42,6 +42,13 @@ $.ajax({
             success: function(newMovie){
                 addMovie(movie);
             },
+            success: function(){
+                $('#Title').val('');
+                $('#Genre').val('');
+                $('#Director').val('');
+                $('#ImageURL').val('');
+                $('ul').empty()
+            },
             error: function(){
                 alert('error saving movie');
             }
@@ -108,3 +115,17 @@ $.ajax({
     image.src = URL.createObjectURL(event.target.files[0]);
     };
 });
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
