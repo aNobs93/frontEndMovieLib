@@ -2,30 +2,24 @@
 table.GeneratedTable {
   width: 100%;
   background: rgba(0, 151, 19, 0.1);
-  /* background-color: #ffffff; */
   border-collapse: collapse;
   border-width: 2px;
   border-color: #4242bd;
   border-style: solid;
   color: #000000;
-  /* opacity: 1; */
 
 }
 
 table.GeneratedTable td, table.GeneratedTable th {
   border-width: 2px;
   background: rgba(0, 151, 19, 0.1);
-  /* border-color: #4242bd; */
   border-style: solid;
   padding: 20px;
-  /* opacity: 0.8; */
 
 }
 
 table.GeneratedTable thead {
     background: rgba(0, 151, 19, 0.1);
-  /* background-color: #408080; */
-  /* opacity: 0.5; */
 
 }
 
@@ -45,20 +39,6 @@ a{
 
 ul{
     padding: 0;
-}
-
-ul h5{
-    /* list-style-type: none;
-    background: #efefef;
-    padding: 10px;
-    margin-bottom: 10px; */
-    /* width: 100%;
-    background-color: #ffffff;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #4242bd;
-    border-style: solid;
-    color: #000000; */
 }
 
 #but{

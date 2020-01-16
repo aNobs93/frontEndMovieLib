@@ -6,6 +6,13 @@ var $moviesList = $('#movies');
 var movieTemplate = $('#movie-template').html();
 $(function(){
 
+    function ClearFields(){
+        document.getElementById("Title").value = "";
+        document.getElementById("Genre").value = "";
+        document.getElementById("Director").value = "";
+        document.getElementById("ImageURL").value = "";
+    }
+
     function addMovie(movie){
         $moviesList.append(Mustache.render(movieTemplate, movie));
     }
@@ -35,14 +42,7 @@ $.ajax({
             data: movie,
             success: function(newMovie){
                 addMovie(movie);
-
-            },
-            success: function(){
-                $('#Title').val('');
-                $('#Genre').val('');
-                $('#Director').val('');
-                $('#ImageURL').val('');
-                $('ul').empty()
+                ClearFields();
             },
             error: function(){
                 alert('error saving movie');
@@ -101,12 +101,12 @@ $.ajax({
         })
     })
 
-    $moviesList.delegate('.deleteImage', 'click', function(){
-        var thisImage = $(this).closest('img');
-        thisImage.remove();
-    });
-     var loadFile = function(event) {
-     var image = document.getElementById('output');
-    image.src = URL.createObjectURL(event.target.files[0]);
-    };
+    // $moviesList.delegate('.deleteImage', 'click', function(){
+    //     var thisImage = $(this).closest('img');
+    //     thisImage.remove();
+    // });
+    //  var loadFile = function(event) {
+    //  var image = document.getElementById('output');
+    // image.src = URL.createObjectURL(event.target.files[0]);
+    // };
 });
