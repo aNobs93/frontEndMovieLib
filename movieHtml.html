@@ -17,10 +17,9 @@
         Title: <input type="text" id="Title">
         Genre: <input type="text" id="Genre">
         Director: <input type="text" id="Director">
-        ImageURL:  <input type="text" onfocus="this.value" id="ImageURL">
+        ImageURL:  <input type="text" id="ImageURL">
         <button class="sub" id="add-movie">Submit</button>
     </div>
-
 <body>
     <div id="headerTitle">    
         <table class="GeneratedTable">
@@ -42,7 +41,6 @@
             </thead>
         </table>
     </div>
-
     <ul id="movies"></ul>
     <template id="movie-template">
         <h5 data-id="{{MovieId}}"> 
@@ -63,19 +61,15 @@
                     </td>
                     <td>
                         <img src="{{ImageURL}}" alt="{{ImageURL}}" width="200" height="200">
-                        <!-- <button class="deleteImage noedit">Delete</button> -->
                     </td>
                   </tr>
                 </thead>
             </table>
             <p>
-
             </p> 
             <p>
-
             </p> 
             <p>
-
             </p>
             <div>
             <button id="but" data-id='{{MovieId}}' class='remove'>Delete</button>
